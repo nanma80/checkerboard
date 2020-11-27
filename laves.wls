@@ -4,7 +4,7 @@ imageFolder = "output";
 exportToPov = False;
 exportToPov = True;
 epsilon = 0.000000001;
-stepCount = 24;
+stepCount = 180;
 
 faceIndicesTetra = Flatten[Table[{k + 1, Mod[k + 1, 6] + 1, m}, {k, 0, 5}, {m, 7, 8}], 1];
 edgeIndicesIcosa = Join[Table[{k + 1, Mod[k + 1, 6] + 1}, {k, 0, 5}],
@@ -15,7 +15,7 @@ edgeIndicesIcosa = Join[Table[{k + 1, Mod[k + 1, 6] + 1}, {k, 0, 5}],
 limit = 3;
 
 finalSize = True;
-finalSize = False;
+(* finalSize = False; *)
 
 imageSize = If[finalSize,
         512,
@@ -68,7 +68,7 @@ drawImage[bipyramids_, progress_, serialNumber_] := Module[
     thickness = 0.03;
     (* 5.65 for the best *)
     (* range = 5.65 * (1 + 0.35 * (1 - Cos[progress * Pi] ^ 30)); *)
-    range = 11.38 * (1 + 0.35 * (1 - Cos[progress * Pi] ^ 30));
+    range = 11.33 * (1 + 0.35 * (1 - Cos[progress * Pi] ^ 30));
 
     lighting = {{"Point", White, {100, -100, 100}}};
 
