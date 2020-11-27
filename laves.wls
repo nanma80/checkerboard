@@ -214,3 +214,9 @@ For[serialNumber = 0, serialNumber <= stepCount - 1, serialNumber++,
 ];
 
 exportAnimation[];
+
+(* 
+magick convert -quiet +repage -alpha remove -loop 0 -delay 4 -dispose 2 laves_frames/*.png slower.gif
+
+magick convert slower.gif -strip -coalesce -layers Optimize optimized_slower.gif
+ *)
